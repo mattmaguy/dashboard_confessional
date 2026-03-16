@@ -981,7 +981,6 @@ function updateClock() {
     document.getElementById('day-pct').textContent = pct + '%';
     document.getElementById('day-fill').style.width = pct + '%';
     updateSchedule(now);
-    updateStats(now);
   } else {
     document.getElementById('clock-date').textContent =
       `${DAYS[selectedDate.getDay()]}, ${MONTHS[selectedDate.getMonth()]} ${selectedDate.getDate()}, ${selectedDate.getFullYear()}`;
@@ -1103,7 +1102,6 @@ function selectDay(date) {
     const isPast = selectedDate < TODAY;
     document.getElementById('day-pct').textContent = isPast ? '100%' : '0%';
     document.getElementById('day-fill').style.width = isPast ? '100%' : '0%';
-    updateStatsFuture();
   }
 
   updateSchedule(isViewingToday() ? new Date() : null);
@@ -1209,44 +1207,6 @@ function updateSchedule(now) {
   }
 }
 
-function updateStats(now) {
-  const sched = getScheduleForDate(selectedDate);
-  const nowMins = now.getHours() * 60 + now.getMinutes();
-  let done = 0, remaining = 0;
-
-  sched.forEach((item, i) => {
-    const start = timeToMins(item.time);
-    const end = i < sched.length - 1 ? timeToMins(sched[i+1].time) : 24 * 60;
-    if (nowMins >= end) done++;
-    else if (nowMins < start) remaining++;
-  });
-
-  document.getElementById('stat-done').textContent = done;
-  document.getElementById('stat-remaining').textContent = remaining;
-
-  const wakeTime = timeToMins(sched[0].time);
-  const bedTime  = timeToMins(sched[sched.length - 1].time);
-  const wakeNext = wakeTime + 24 * 60;
-
-  const wakeIn = nowMins < wakeTime ? wakeTime - nowMins : wakeNext - nowMins;
-  const wh = Math.floor(wakeIn / 60), wm = wakeIn % 60;
-  document.getElementById('stat-wake').textContent = `${wh}h ${wm}m`;
-
-  const bedIn = nowMins < bedTime ? bedTime - nowMins : (bedTime + 24 * 60) - nowMins;
-  const bh = Math.floor(bedIn / 60), bm = bedIn % 60;
-  document.getElementById('stat-bed').textContent = `${bh}h ${bm}m`;
-}
-
-function updateStatsFuture() {
-  const sched = getScheduleForDate(selectedDate);
-  const isPast = selectedDate < TODAY;
-  document.getElementById('stat-done').textContent = isPast ? sched.length : 0;
-  document.getElementById('stat-remaining').textContent = isPast ? 0 : sched.length;
-  const wakeTime = sched[0].time;
-  const bedTime  = sched[sched.length - 1].time;
-  document.getElementById('stat-wake').textContent = fmt12(wakeTime);
-  document.getElementById('stat-bed').textContent  = fmt12(bedTime);
-}
 
 // ── MOON PHASE ─────────────────────────────────────────────────────────────
 function getMoonPhase(date) {
