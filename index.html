@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DAILY COMMAND</title>
+
+<!-- PWA / iPhone Home Screen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DAILY CMD">
+<meta name="theme-color" content="#16121f">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnRyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMTYxMjFmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzIyMWYzMiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50RyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNUU0RkY1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNkZGM2YiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxyZWN0IGlkPSJyciIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIzOCIgcnk9IjM4Ii8+CiAgICA8Y2xpcFBhdGggaWQ9InJvdW5kIj4KICAgICAgPHVzZSBocmVmPSIjcnIiLz4KICAgIDwvY2xpcFBhdGg+CiAgPC9kZWZzPgoKICA8IS0tIEJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSIzOCIgZmlsbD0idXJsKCNiZ0cpIi8+CgogIDwhLS0gR2xvdyBvcmIgdG9wLXJpZ2h0IC0tPgogIDxjaXJjbGUgY3g9IjE0MCIgY3k9IjQwIiByPSI2MCIgZmlsbD0iIzVFNEZGNSIgb3BhY2l0eT0iMC4xNSIvPgoKICA8IS0tIEFjY2VudCBiYXIgdG9wIC0tPgogIDxyZWN0IHg9IjI0IiB5PSIyNCIgd2lkdGg9IjEzMiIgaGVpZ2h0PSI0IiByeD0iMiIgZmlsbD0idXJsKCNhY2NlbnRHKSIvPgoKICA8IS0tICJEQyIgbW9ub2dyYW0gLS0+CiAgPHRleHQgeD0iOTAiIHk9IjEwNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IidBcmlhbCBCbGFjaycsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iNzIiIGxldHRlci1zcGFjaW5nPSItMiIgZmlsbD0idXJsKCNhY2NlbnRHKSI+REM8L3RleHQ+CgogIDwhLS0gU3VidGl0bGUgLS0+CiAgPHRleHQgeD0iOTAiIHk9IjE0MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IidBcmlhbCcsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI0MDAiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSI0IiBmaWxsPSIjZThlMGQyIiBvcGFjaXR5PSIwLjUiPkNPTU1BTkQ8L3RleHQ+CgogIDwhLS0gQWNjZW50IGJhciBib3R0b20gLS0+CiAgPHJlY3QgeD0iNjQiIHk9IjE1NiIgd2lkdGg9IjUyIiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIGZpbGw9InVybCgjYWNjZW50RykiIG9wYWNpdHk9IjAuNiIvPgo8L3N2Zz4K">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -1447,7 +1455,9 @@ function getUserLocation() {
         const lon = pos.coords.longitude.toFixed(4);
         // Reverse geocode with Open-Meteo's free geocoding helper via nominatim
         try {
-          const geo = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`);
+          const geo = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`, {
+            headers: { 'User-Agent': 'DailyCommandDashboard/1.0' }
+          });
           const gd = await geo.json();
           const city = gd.address.city || gd.address.town || gd.address.village || gd.address.county || 'Your Location';
           resolve({ lat, lon, city });
@@ -1468,7 +1478,7 @@ async function fetchWeather() {
     document.getElementById('weather-location').textContent = city;
 
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,relativehumidity_2m,precipitation_probability&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=${encodeURIComponent(tz)}&daily=temperature_2m_max,temperature_2m_min,weathercode&forecast_days=3`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,relative_humidity_2m,precipitation_probability&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=${encodeURIComponent(tz)}&daily=temperature_2m_max,temperature_2m_min,weathercode&forecast_days=3`;
     const res = await fetch(url);
     const data = await res.json();
 
@@ -1482,7 +1492,7 @@ async function fetchWeather() {
     const now2 = new Date();
     const localHour = `${now2.getFullYear()}-${String(now2.getMonth()+1).padStart(2,'0')}-${String(now2.getDate()).padStart(2,'0')}T${String(now2.getHours()).padStart(2,'0')}`;
     const hIdx = Math.max(0, hours.findIndex(h => h.startsWith(localHour)));
-    const humidity = data.hourly.relativehumidity_2m[hIdx] || '--';
+    const humidity = data.hourly.relative_humidity_2m[hIdx] || '--';
     const rain = data.hourly.precipitation_probability[hIdx] || 0;
 
     document.getElementById('weather-temp').innerHTML = `<span>${temp}</span>°`;
@@ -1496,7 +1506,7 @@ async function fetchWeather() {
     const days = data.daily;
     const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     const forecastHTML = [0,1,2].map(i => {
-      const d = new Date(days.time[i]);
+      const d = new Date(days.time[i] + 'T12:00:00');
       const dn = dayNames[d.getDay()];
       const hi = Math.round(days.temperature_2m_max[i]);
       const lo = Math.round(days.temperature_2m_min[i]);
