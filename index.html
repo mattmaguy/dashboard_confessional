@@ -1478,22 +1478,18 @@ async function fetchWeather() {
     document.getElementById('weather-location').textContent = city;
 
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,relative_humidity_2m,precipitation_probability&temperature_unit=fahrenheit&windspeed_unit=mph&timezone=${encodeURIComponent(tz)}&daily=temperature_2m_max,temperature_2m_min,weathercode&forecast_days=3`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,precipitation_probability,weather_code,wind_speed_10m,is_day&daily=temperature_2m_max,temperature_2m_min,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=${encodeURIComponent(tz)}&forecast_days=3`;
     const res = await fetch(url);
     const data = await res.json();
 
-    const cw = data.current_weather;
-    const code = cw.weathercode;
-    const temp = Math.round(cw.temperature);
-    const wind = Math.round(cw.windspeed);
+    if (data.error) throw new Error(data.reason || 'API error');
 
-    // find current hour index for humidity/rain (API times are in local tz)
-    const hours = data.hourly.time;
-    const now2 = new Date();
-    const localHour = `${now2.getFullYear()}-${String(now2.getMonth()+1).padStart(2,'0')}-${String(now2.getDate()).padStart(2,'0')}T${String(now2.getHours()).padStart(2,'0')}`;
-    const hIdx = Math.max(0, hours.findIndex(h => h.startsWith(localHour)));
-    const humidity = data.hourly.relative_humidity_2m[hIdx] || '--';
-    const rain = data.hourly.precipitation_probability[hIdx] || 0;
+    const cw = data.current;
+    const code = cw.weather_code;
+    const temp = Math.round(cw.temperature_2m);
+    const wind = Math.round(cw.wind_speed_10m);
+    const humidity = cw.relative_humidity_2m || '--';
+    const rain = cw.precipitation_probability || 0;
 
     document.getElementById('weather-temp').innerHTML = `<span>${temp}</span>°`;
     document.getElementById('weather-condition').textContent = WMO_CODES[code] || 'Unknown';
@@ -1518,8 +1514,9 @@ async function fetchWeather() {
     }).join('');
     document.getElementById('forecast-row').innerHTML = forecastHTML;
   } catch(e) {
+    console.error('Weather fetch failed:', e);
     document.getElementById('weather-condition').textContent = 'Unavailable';
-    document.getElementById('weather-location').textContent = 'Offline';
+    document.getElementById('weather-location').textContent = 'Check console';
     document.getElementById('weather-icon').innerHTML = buildSunIcon();
   }
 }
