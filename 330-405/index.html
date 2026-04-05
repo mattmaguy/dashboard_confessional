@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DAILY COMMAND · W/C MAR 30</title>
+<title>DAILY COMMAND · W/C APR 6</title>
 
 <!-- PWA / iPhone Home Screen -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1027,19 +1027,19 @@
       <div class="outcome-row">
         <span class="outcome-num">1</span>
         <div class="outcome-text" contenteditable="true" spellcheck="false"
-          data-key="outcome-1-wc330"
+          data-key="outcome-1-wc406"
           data-placeholder="Your #1 outcome for the week..."></div>
       </div>
       <div class="outcome-row">
         <span class="outcome-num">2</span>
         <div class="outcome-text" contenteditable="true" spellcheck="false"
-          data-key="outcome-2-wc330"
+          data-key="outcome-2-wc406"
           data-placeholder="Your #2 outcome for the week..."></div>
       </div>
       <div class="outcome-row">
         <span class="outcome-num">3</span>
         <div class="outcome-text" contenteditable="true" spellcheck="false"
-          data-key="outcome-3-wc330"
+          data-key="outcome-3-wc406"
           data-placeholder="Your #3 outcome for the week..."></div>
       </div>
     </div>
@@ -1156,132 +1156,140 @@ function updateClock() {
 // ── PER-DAY SCHEDULES ────────────────────────────────────────────────────────
 // blockType: 'morning'=neutral | 'red'=deep work | 'yellow'=people | 'blue'=admin | 'green'=protected
 const WEEK_SCHEDULES = {
-  '2026-03-30': { // Monday — Deep Work
+  '2026-04-06': { // Monday — Deep Work
     dayType: 'red', dayLabel: 'Deep Work',
     blocks: [
-      { time:'06:45', icon:'💧', label:'Wake + Hydrate',             blockType:'morning' },
-      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk', blockType:'morning' },
-      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',         blockType:'morning' },
-      { time:'08:00', icon:'🧠', label:'Deep Focus Block',           blockType:'red',    blockLabel:'DEEP WORK',   note:'8am–12pm · No meetings · No Slack' },
-      { time:'12:00', icon:'🥗', label:'Lunch Reset',                blockType:'morning' },
-      { time:'12:30', icon:'💼', label:'Execution Block',            blockType:'yellow', blockLabel:'EXECUTION' },
-      { time:'14:30', icon:'📹', label:'Real People Videos with JXM', blockType:'yellow', blockLabel:'MEETING',   note:'Teams · 30 min' },
-      { time:'15:00', icon:'🤝', label:'Matt & Will (Applewild)',    blockType:'yellow', blockLabel:'MEETING',   note:'50 min' },
-      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',       blockType:'morning' },
-      { time:'16:30', icon:'✅', label:'Wrap Workday',               blockType:'morning' },
-      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',       blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',    blockType:'morning' },
-      { time:'21:10', icon:'📔', label:'Nightly Journal',            blockType:'morning' },
-      { time:'21:30', icon:'🌙', label:'Wind Down Routine',          blockType:'morning' },
-      { time:'22:45', icon:'😴', label:'Bedtime',                    blockType:'morning' },
+      { time:'06:45', icon:'💧', label:'Wake + Hydrate',                  blockType:'morning' },
+      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk',      blockType:'morning' },
+      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',              blockType:'morning' },
+      { time:'08:00', icon:'🧠', label:'Deep Focus Block',                blockType:'red',    blockLabel:'DEEP WORK',    note:'8am–12pm · No meetings · No Slack' },
+      { time:'09:00', icon:'✍️', label:'Cheat Codes 0x12 — Write Issue', blockType:'red',    blockLabel:'DEEP WORK',    note:'Pick game · Research · Draft · Done' },
+      { time:'12:00', icon:'🥗', label:'Lunch Reset',                     blockType:'morning' },
+      { time:'12:30', icon:'💼', label:'Send Design Force Stinger Brief', blockType:'yellow', blockLabel:'EXECUTION',    note:'3 answers → brief out the door' },
+      { time:'13:00', icon:'💼', label:'Execution Block',                 blockType:'yellow', blockLabel:'EXECUTION' },
+      { time:'14:30', icon:'💼', label:'LinkedIn Engagement',             blockType:'yellow', blockLabel:'LINKEDIN',     note:'Comment · React · Reply · 20 min max' },
+      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',            blockType:'morning' },
+      { time:'16:30', icon:'✅', label:'Wrap Workday',                    blockType:'morning' },
+      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',            blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',         blockType:'morning' },
+      { time:'21:10', icon:'📔', label:'Nightly Journal',                 blockType:'morning' },
+      { time:'21:30', icon:'🌙', label:'Wind Down Routine',               blockType:'morning' },
+      { time:'22:45', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   },
-  '2026-03-31': { // Tuesday — People Time
+  '2026-04-07': { // Tuesday — People Time
     dayType: 'yellow', dayLabel: 'People Time',
     blocks: [
-      { time:'06:45', icon:'💧', label:'Wake + Hydrate',             blockType:'morning' },
-      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk', blockType:'morning' },
-      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',         blockType:'morning' },
-      { time:'08:00', icon:'📋', label:'Daily Planning + Prep',      blockType:'yellow', blockLabel:'PREP',        note:'Prep for meetings · Review agenda' },
-      { time:'10:00', icon:'🟡', label:'Meetings Open Window',       blockType:'yellow', blockLabel:'PEOPLE TIME', note:'Guardrail: no meetings before 10am' },
-      { time:'11:30', icon:'📊', label:'JXM / BCU Proposal Review', blockType:'yellow', blockLabel:'MEETING',     note:'Teams · 30 min' },
-      { time:'12:00', icon:'🥗', label:'Lunch Reset',                blockType:'morning' },
-      { time:'13:30', icon:'🤝', label:'Matt & Brittany Anderson',   blockType:'yellow', blockLabel:'MEETING',     note:'Zoom · 25 min' },
-      { time:'14:00', icon:'✉️', label:'Follow-up + Action Items',   blockType:'yellow', blockLabel:'PEOPLE TIME' },
-      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',       blockType:'morning' },
-      { time:'16:30', icon:'✅', label:'Wrap Workday',               blockType:'morning' },
-      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',       blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',    blockType:'morning' },
-      { time:'21:10', icon:'📔', label:'Nightly Journal',            blockType:'morning' },
-      { time:'21:30', icon:'🌙', label:'Wind Down Routine',          blockType:'morning' },
-      { time:'22:45', icon:'😴', label:'Bedtime',                    blockType:'morning' },
+      { time:'06:45', icon:'💧', label:'Wake + Hydrate',                  blockType:'morning' },
+      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk',      blockType:'morning' },
+      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',              blockType:'morning' },
+      { time:'08:00', icon:'📋', label:'Daily Planning + Prep',           blockType:'yellow', blockLabel:'PREP',         note:'Prep for meetings · Review agenda' },
+      { time:'09:00', icon:'💼', label:'LinkedIn Engagement',             blockType:'yellow', blockLabel:'LINKEDIN',     note:'Comment · React · Reply · 20 min max' },
+      { time:'10:00', icon:'🟡', label:'Meetings Open Window',            blockType:'yellow', blockLabel:'PEOPLE TIME',  note:'Guardrail: no meetings before 10am' },
+      { time:'12:00', icon:'🥗', label:'Lunch Reset',                     blockType:'morning' },
+      { time:'13:00', icon:'🤝', label:'Follow-up + Action Items',        blockType:'yellow', blockLabel:'PEOPLE TIME' },
+      { time:'14:00', icon:'✉️', label:'CU Connection — Write Jim's change brief', blockType:'yellow', blockLabel:'EXECUTION', note:'Get it in writing before Design Force touches it' },
+      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',            blockType:'morning' },
+      { time:'16:30', icon:'✅', label:'Wrap Workday',                    blockType:'morning' },
+      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',            blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',         blockType:'morning' },
+      { time:'21:10', icon:'📔', label:'Nightly Journal',                 blockType:'morning' },
+      { time:'21:30', icon:'🌙', label:'Wind Down Routine',               blockType:'morning' },
+      { time:'22:45', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   },
-  '2026-04-01': { // Wednesday — Deep Work
+  '2026-04-08': { // Wednesday — Deep Work
     dayType: 'red', dayLabel: 'Deep Work',
     blocks: [
-      { time:'06:45', icon:'💧', label:'Wake + Hydrate',             blockType:'morning' },
-      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk', blockType:'morning' },
-      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',         blockType:'morning' },
-      { time:'08:00', icon:'🧠', label:'Deep Focus Block',           blockType:'red',    blockLabel:'DEEP WORK',   note:'8am–12pm · No meetings · No Slack' },
-      { time:'12:00', icon:'🥗', label:'Lunch Reset',                blockType:'morning' },
-      { time:'12:30', icon:'💼', label:'Execution / Output',         blockType:'yellow', blockLabel:'EXECUTION' },
-      { time:'14:30', icon:'📬', label:'Admin Catchup',              blockType:'blue',   blockLabel:'ADMIN' },
-      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',       blockType:'morning' },
-      { time:'16:30', icon:'✅', label:'Wrap Workday',               blockType:'morning' },
-      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',       blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',    blockType:'morning' },
-      { time:'21:10', icon:'📔', label:'Nightly Journal',            blockType:'morning' },
-      { time:'21:30', icon:'🌙', label:'Wind Down Routine',          blockType:'morning' },
-      { time:'22:45', icon:'😴', label:'Bedtime',                    blockType:'morning' },
+      { time:'06:45', icon:'💧', label:'Wake + Hydrate',                  blockType:'morning' },
+      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk',      blockType:'morning' },
+      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',              blockType:'morning' },
+      { time:'08:00', icon:'🧠', label:'Deep Focus Block',                blockType:'red',    blockLabel:'DEEP WORK',    note:'8am–12pm · No meetings · No Slack' },
+      { time:'09:00', icon:'🎯', label:'Brand Campaign Concept — One Paragraph', blockType:'red', blockLabel:'DEEP WORK', note:'What is the May campaign about and who is it for?' },
+      { time:'12:00', icon:'🥗', label:'Lunch Reset',                     blockType:'morning' },
+      { time:'12:30', icon:'🖼️', label:'LinkedIn Banner Layout',          blockType:'yellow', blockLabel:'EXECUTION',   note:'Export .ai as PDF → finish layout with Claude' },
+      { time:'14:00', icon:'💼', label:'LinkedIn Engagement',             blockType:'yellow', blockLabel:'LINKEDIN',     note:'Comment · React · Reply · 20 min max' },
+      { time:'14:30', icon:'📬', label:'Admin Catchup',                   blockType:'blue',   blockLabel:'ADMIN' },
+      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',            blockType:'morning' },
+      { time:'16:30', icon:'✅', label:'Wrap Workday',                    blockType:'morning' },
+      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',            blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',         blockType:'morning' },
+      { time:'21:10', icon:'📔', label:'Nightly Journal',                 blockType:'morning' },
+      { time:'21:30', icon:'🌙', label:'Wind Down Routine',               blockType:'morning' },
+      { time:'22:45', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   },
-  '2026-04-02': { // Thursday — People Time
+  '2026-04-09': { // Thursday — People Time
     dayType: 'yellow', dayLabel: 'People Time',
     blocks: [
-      { time:'06:45', icon:'💧', label:'Wake + Hydrate',             blockType:'morning' },
-      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk', blockType:'morning' },
-      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',         blockType:'morning' },
-      { time:'08:00', icon:'📋', label:'Daily Planning + Prep',      blockType:'yellow', blockLabel:'PREP',        note:'Prep for meetings · Review agenda' },
-      { time:'10:00', icon:'🟡', label:'Meetings Open Window',       blockType:'yellow', blockLabel:'PEOPLE TIME', note:'Stack your calls here' },
-      { time:'12:00', icon:'🥗', label:'Lunch Reset',                blockType:'morning' },
-      { time:'13:00', icon:'📞', label:'Coaching / Calls',           blockType:'yellow', blockLabel:'PEOPLE TIME' },
-      { time:'15:00', icon:'✉️', label:'Follow-up + Output',         blockType:'yellow', blockLabel:'PEOPLE TIME' },
-      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',       blockType:'morning' },
-      { time:'16:30', icon:'✅', label:'Wrap Workday',               blockType:'morning' },
-      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',       blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',    blockType:'morning' },
-      { time:'21:10', icon:'📔', label:'Nightly Journal',            blockType:'morning' },
-      { time:'21:30', icon:'🌙', label:'Wind Down Routine',          blockType:'morning' },
-      { time:'22:45', icon:'😴', label:'Bedtime',                    blockType:'morning' },
+      { time:'06:45', icon:'💧', label:'Wake + Hydrate',                  blockType:'morning' },
+      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk',      blockType:'morning' },
+      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',              blockType:'morning' },
+      { time:'08:00', icon:'📋', label:'Daily Planning + Prep',           blockType:'yellow', blockLabel:'PREP',         note:'Prep for NHFCU call tomorrow' },
+      { time:'09:00', icon:'💼', label:'LinkedIn Engagement',             blockType:'yellow', blockLabel:'LINKEDIN',     note:'Comment · React · Reply · 20 min max' },
+      { time:'09:30', icon:'🔵', label:'NHFCU Prep — Meet/Greet Review', blockType:'yellow', blockLabel:'PREP',         note:'What do you want to walk away with from Friday's call?' },
+      { time:'10:00', icon:'🟡', label:'Meetings Open Window',            blockType:'yellow', blockLabel:'PEOPLE TIME',  note:'Stack your calls here' },
+      { time:'12:00', icon:'🥗', label:'Lunch Reset',                     blockType:'morning' },
+      { time:'13:00', icon:'📞', label:'Coaching / Calls',                blockType:'yellow', blockLabel:'PEOPLE TIME' },
+      { time:'15:00', icon:'✉️', label:'Follow-up + Output',              blockType:'yellow', blockLabel:'PEOPLE TIME' },
+      { time:'16:00', icon:'🚶', label:'Afternoon Walk Reset',            blockType:'morning' },
+      { time:'16:30', icon:'✅', label:'Wrap Workday',                    blockType:'morning' },
+      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',            blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'19:30', icon:'📖', label:'Low Stimulation Evening',         blockType:'morning' },
+      { time:'21:10', icon:'📔', label:'Nightly Journal',                 blockType:'morning' },
+      { time:'21:30', icon:'🌙', label:'Wind Down Routine',               blockType:'morning' },
+      { time:'22:45', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   },
-  '2026-04-03': { // Friday — Deep Work AM + Admin PM + Date Night
-    dayType: 'blue', dayLabel: 'Admin + Date Night',
+  '2026-04-10': { // Friday — Admin + NHFCU
+    dayType: 'blue', dayLabel: 'Admin + NHFCU',
     blocks: [
-      { time:'06:45', icon:'💧', label:'Wake + Hydrate',             blockType:'morning' },
-      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk', blockType:'morning' },
-      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',         blockType:'morning' },
-      { time:'08:00', icon:'🧠', label:'Deep Focus Block',           blockType:'red',    blockLabel:'DEEP WORK',   note:'Final deep work of week · 8am–12pm' },
-      { time:'12:00', icon:'🥗', label:'Lunch Reset',                blockType:'morning' },
-      { time:'12:30', icon:'📬', label:'Admin Catchup',              blockType:'blue',   blockLabel:'ADMIN' },
-      { time:'14:30', icon:'📥', label:'Inbox Clear · Prep Week Ahead', blockType:'blue', blockLabel:'ADMIN',      note:'Clear backlog so Monday starts clean' },
-      { time:'16:00', icon:'✅', label:'Wrap Workday',               blockType:'morning' },
-      { time:'17:30', icon:'🍽️', label:'Dinner Reservations',        blockType:'green',  blockLabel:'DATE NIGHT' },
-      { time:'20:00', icon:'🎶', label:'An Evening with Chris Thile', blockType:'green',  blockLabel:'DATE NIGHT',  note:'Groton Hill Music Center · Groton MA' },
-      { time:'22:00', icon:'🌙', label:'Wind Down / Travel Home',    blockType:'morning' },
+      { time:'06:45', icon:'💧', label:'Wake + Hydrate',                  blockType:'morning' },
+      { time:'07:00', icon:'🌅', label:'Morning Outdoor Light Walk',      blockType:'morning' },
+      { time:'07:30', icon:'☕', label:'Breakfast + Coffee',              blockType:'morning' },
+      { time:'08:00', icon:'🧠', label:'Deep Focus Block',                blockType:'red',    blockLabel:'DEEP WORK',    note:'Final deep work of week · 8am–10:30am' },
+      { time:'10:30', icon:'💼', label:'LinkedIn Engagement',             blockType:'yellow', blockLabel:'LINKEDIN',     note:'Comment · React · Reply · 20 min max' },
+      { time:'11:00', icon:'🏦', label:'NHFCU Meet/Greet Overview',       blockType:'yellow', blockLabel:'MEETING',      note:'Teams · Polly Saltmarsh · 30 min' },
+      { time:'11:30', icon:'✍️', label:'NHFCU Follow-up Notes',           blockType:'yellow', blockLabel:'FOLLOW-UP' },
+      { time:'12:00', icon:'🥗', label:'Lunch Reset',                     blockType:'morning' },
+      { time:'12:30', icon:'📬', label:'Admin Catchup',                   blockType:'blue',   blockLabel:'ADMIN' },
+      { time:'14:30', icon:'📥', label:'Inbox Clear · Prep Week Ahead',   blockType:'blue',   blockLabel:'ADMIN',        note:'Clear backlog so Monday starts clean' },
+      { time:'16:00', icon:'✅', label:'Wrap Workday',                    blockType:'morning' },
+      { time:'18:00', icon:'🍽️', label:'Dinner / Family Time',            blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'21:30', icon:'🌙', label:'Wind Down',                       blockType:'morning' },
+      { time:'22:30', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   },
-  '2026-04-04': { // Saturday — Rest
+  '2026-04-11': { // Saturday — Rest
     dayType: 'green', dayLabel: 'Rest',
     blocks: [
-      { time:'08:00', icon:'😴', label:'Sleep In / Slow Morning',   blockType:'morning' },
-      { time:'09:30', icon:'🥞', label:'Easy Breakfast',             blockType:'morning' },
-      { time:'10:00', icon:'🌿', label:'Light Outdoor Activity',     blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'12:00', icon:'🥗', label:'Lunch — No Rush',            blockType:'morning' },
-      { time:'13:00', icon:'👨‍👩‍👧', label:'Family Time',               blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'15:00', icon:'🛋️', label:'Rest / Nap Optional',        blockType:'morning' },
-      { time:'17:00', icon:'🚶', label:'Outdoor Walk',               blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'18:30', icon:'🍽️', label:'Dinner',                     blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'20:00', icon:'📖', label:'Low Stimulation Evening',    blockType:'morning' },
-      { time:'21:30', icon:'🌙', label:'Wind Down',                  blockType:'morning' },
-      { time:'22:30', icon:'😴', label:'Bedtime',                    blockType:'morning' },
+      { time:'08:00', icon:'😴', label:'Sleep In / Slow Morning',         blockType:'morning' },
+      { time:'09:30', icon:'🥞', label:'Easy Breakfast',                  blockType:'morning' },
+      { time:'10:00', icon:'🌿', label:'Light Outdoor Activity',          blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'12:00', icon:'🥗', label:'Lunch — No Rush',                 blockType:'morning' },
+      { time:'13:00', icon:'👨‍👩‍👧', label:'Family Time',                    blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'15:00', icon:'🛋️', label:'Rest / Nap Optional',             blockType:'morning' },
+      { time:'17:00', icon:'🚶', label:'Outdoor Walk',                    blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'18:30', icon:'🍽️', label:'Dinner',                          blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'20:00', icon:'📖', label:'Low Stimulation Evening',         blockType:'morning' },
+      { time:'21:30', icon:'🌙', label:'Wind Down',                       blockType:'morning' },
+      { time:'22:30', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   },
-  '2026-04-05': { // Sunday — Rest + Sunday Reset
+  '2026-04-12': { // Sunday — Rest + Sunday Reset
     dayType: 'blue', dayLabel: 'Sunday Reset',
     blocks: [
-      { time:'08:00', icon:'😴', label:'Sleep In / Slow Morning',   blockType:'morning' },
-      { time:'09:30', icon:'🥞', label:'Easy Breakfast',             blockType:'morning' },
-      { time:'10:00', icon:'🌿', label:'Light Outdoor Activity',     blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'12:00', icon:'🥗', label:'Lunch',                      blockType:'morning' },
-      { time:'13:00', icon:'👨‍👩‍👧', label:'Family Time',               blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'18:00', icon:'🍽️', label:'Dinner',                     blockType:'green',  blockLabel:'PROTECTED' },
-      { time:'19:30', icon:'🔄', label:'Sunday Reset — 30 min',      blockType:'blue',   blockLabel:'RESET',       note:'Review week · Pick 3 outcomes · Clear inbox' },
-      { time:'20:00', icon:'📋', label:'Set Next Week\'s Calendar',  blockType:'blue',   blockLabel:'RESET' },
-      { time:'21:00', icon:'📖', label:'Low Stimulation Evening',    blockType:'morning' },
-      { time:'21:30', icon:'🌙', label:'Wind Down',                  blockType:'morning' },
-      { time:'22:30', icon:'😴', label:'Bedtime',                    blockType:'morning' },
+      { time:'08:00', icon:'😴', label:'Sleep In / Slow Morning',         blockType:'morning' },
+      { time:'09:30', icon:'🥞', label:'Easy Breakfast',                  blockType:'morning' },
+      { time:'10:00', icon:'🌿', label:'Light Outdoor Activity',          blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'12:00', icon:'🥗', label:'Lunch',                           blockType:'morning' },
+      { time:'13:00', icon:'👨‍👩‍👧', label:'Family Time',                    blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'18:00', icon:'🍽️', label:'Dinner',                          blockType:'green',  blockLabel:'PROTECTED' },
+      { time:'19:30', icon:'🔄', label:'Sunday Reset — 30 min',           blockType:'blue',   blockLabel:'RESET',        note:'Review week · Pick 3 outcomes · Clear inbox' },
+      { time:'20:00', icon:'📋', label:'Set Next Week's Calendar',       blockType:'blue',   blockLabel:'RESET' },
+      { time:'21:00', icon:'📖', label:'Low Stimulation Evening',         blockType:'morning' },
+      { time:'21:30', icon:'🌙', label:'Wind Down',                       blockType:'morning' },
+      { time:'22:30', icon:'😴', label:'Bedtime',                         blockType:'morning' },
     ]
   }
 };
@@ -1310,7 +1318,7 @@ function getDayEnergy(date) {
 }
 
 // ── DAY FILTER ──────────────────────────────────────────────────────────────
-const WEEK_START = new Date(2026, 2, 30); // March 30
+const WEEK_START = new Date(2026, 3, 6); // April 6
 
 function buildDayFilter() {
   const filter = document.getElementById('day-filter');
